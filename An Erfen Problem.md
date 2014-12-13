@@ -13,7 +13,6 @@
 	#include <algorithm>
 	using namespace std;
 	int m,n,k;
-	int cmp( const void *a , const void *b );
 	//求小于v的数的个数
 	int getLessNum(int m, int *a, int *b);
 	int main()
@@ -27,8 +26,8 @@
 	    for(int i = 0; i < n; i++) {
 	        cin>>b[i];
 	    }
-	    qsort(a, m, sizeof(int), cmp);
-	    qsort(b, n, sizeof(int), cmp);
+	    sort(a, a + m);
+	    sort(b, a + n);
 	    //计算Range
 	    int mMin = a[0] * b[0];
 	    int mMax = a[m - 1] * b[n -1];
@@ -48,9 +47,6 @@
 	    }
 	    return 0;
 	
-	}
-	int cmp( const void *a , const void *b ) {
-	    return *(int *)a - *(int *)b;
 	}
 	//求小于等于v的个数的最坏时间复杂度是O(m+n),注意这里的小技巧
 	//一个细节是从左到右、从上到下是分别递增的
