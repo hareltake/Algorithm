@@ -1,0 +1,3 @@
+1. 信息熵代表的含义，与纯度和随机度的关系。
+2. 信息熵准则会偏好于可取值数目较多的属性。
+python eval_objects_classifier.py --alsologtostderr --checkpoint_path=${CHECKPOINT_FILE} --dataset_dir=${DATASET_DIR} --dataset_name=objects --dataset_split_name=validation --model_name=inception_resnet_v2
